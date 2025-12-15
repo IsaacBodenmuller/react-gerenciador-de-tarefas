@@ -18,10 +18,11 @@ function Tasks({ tasks, onTaskClick, onTrashClick }) {
         <li key={task.id} className="flex gap-2">
           <button
             onClick={() => onTaskClick(task.id)}
-            className={`text-left bg-slate-400 text-white p-2 rounded-md w-full ${
-              task.isCompleted && "line-through text-red-900"
+            className={`text-left bg-slate-400 text-white p-2 flex items-center gap-2 rounded-md w-full ${
+              task.isCompleted && "line-through"
             }`}
           >
+            {task.isCompleted && <CheckIcon />}
             {task.title}
           </button>
           <Button onClick={() => onSeeDetailsClick(task)}>
